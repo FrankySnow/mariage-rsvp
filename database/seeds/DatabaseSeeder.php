@@ -11,6 +11,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+    	$this->seedPresencesTable();
+    	$this->seedFamillesTable();
+    	$this->seedReponsesTable();
+    }
+
+    private function seedPresencesTable()
+    {
+        DB::table('presences')->insert(['presence' => 'non présent']);
+    	DB::table('presences')->insert(['presence' => 'seulement cocktail']);
+    	DB::table('presences')->insert(['presence' => 'cocktail & repas']);
+    }
+
+    private function seedFamillesTable()
+    {
+    	factory(App\Famille::class,60)->create();
+    }
+
+    private function seedReponsesTable()
+    {
+    	DB::table('reponses')->truncate();
+    	factory(App\Reponse::class,50)->create();
     }
 }
