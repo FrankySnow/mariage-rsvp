@@ -28,7 +28,7 @@ class CreateReponsesTable extends Migration
             $table->string('prenom');
             $table->string('nom');
             $table->string('remarque')->nullable();
-            $table->string('email')->unique()->nullable();
+            $table->string('email')->nullable();
             $table->integer('presence_id')->unsigned()->nullable();
             $table->integer('famille_id')->unsigned()->nullable();
             $table->timestamps();

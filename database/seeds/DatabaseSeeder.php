@@ -12,15 +12,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     	$this->seedPresencesTable();
-    	$this->seedFamillesTable();
-    	$this->seedReponsesTable();
+    	#$this->seedFamillesTable();
+    	#$this->seedReponsesTable();
     }
 
     private function seedPresencesTable()
     {
-        DB::table('presences')->insert(['presence' => 'non présent']);
-    	DB::table('presences')->insert(['presence' => 'seulement cocktail']);
     	DB::table('presences')->insert(['presence' => 'cocktail & repas']);
+        DB::table('presences')->insert(['presence' => 'seulement cocktail']);
+        DB::table('presences')->insert(['presence' => 'non présent']);
     }
 
     private function seedFamillesTable()

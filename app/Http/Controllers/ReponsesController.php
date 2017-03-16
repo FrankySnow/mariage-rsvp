@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Reponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class ReponsesController extends Controller
 {
@@ -39,8 +40,30 @@ class ReponsesController extends Controller
      */
     public function store(Request $request)
     {
-        Reponse::create( $request->all() );
-        return response()->json([], 200);
+        $this->validate($request, [
+            'prenom' => 'required',
+            'nom' => 'required',
+            'email' => 'required',
+            'presence_id' => 'required',
+            'prenom_conjoint' => 'required_with:conjoint',
+            'nom_conjoint' => 'required_with:conjoint',
+        ]);
+
+        if( $request->has('conjoint') ) {
+            $conjoint = [
+                'prenom' => $request->prenom_conjoint,
+                'nom' => $request->nom_conjoint,
+                'email' => $request->email,
+                'remarque' => $request->remarque,
+                'presence_id' => $request->presence_id,
+            ];
+
+            Reponse::create( $conjoint );
+        }
+        
+        Reponse::create( $request->except(['conjoint', 'prenom_conjoint','nom_conjoint']) );
+
+        return response()->json(['message' => 'Réponse enregistrée !'], 200);
     }
 
     /**
