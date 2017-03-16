@@ -15,13 +15,12 @@
         <div class="main">
         	<div class="container" id="root">
         		<h1 class="titre"><img src="img/titre.png"></h1>
-        		<div class="photo">
+        		<!-- <div class="photo">
         			<img src="img/DSC_0349.JPG">
-    			</div>
+    			</div> -->
     			<h2>Nous répondre</h2>
     			<p>Nous aimerions beaucoup vous compter parmi nous ! Merci de nous répondre avant le 20 avril en utilisant le formulaire ci-dessous.</p>
-    			<hr>
-    			<form class="formulaire txtleft" action="" v-on:submit.prevent="onSubmit">
+    			<form id="formulaire" class="formulaire txtleft" action="" v-on:submit.prevent="onSubmit">
     				<input type="text"  class="one-quarter" name="prenom" placeholder="Prénom" v-model="prenom">
     				<input type="text"  class="one-quarter" name="nom" placeholder="Nom" v-model="nom">
     				<input type="text"  class="one-quarter" name="email" placeholder="Courriel" v-model="email">
@@ -34,11 +33,10 @@
 	    				<input class="" type="text" name="prenom_conjoint" v-model="prenom_conjoint" placeholder="Son prénom">
 	    				<input class="" type="text" name="nom_conjoint" v-model="nom_conjoint" placeholder="Son nom">
     				</div>
-    				<button class="bouton-envoyer" type="submit" v-if="!soumis">Envoyer</button>
+    				<div class="txtcenter"><button class="action bouton-envoyer" type="submit" v-if="!soumis">Envoyer</button></div>
+	    			<div class="succes" v-show="soumis">Votre réponse a bien été enregistrée, merci !</div>
+	    			<div class="erreur" v-show="erreur">Merci de vérifier les données du formulaire. Tous les champs sont requis à l'exception des remarques.</div>
     			</form>
-    			<div class="succes" v-if="soumis">Votre réponse a bien été enregistrée, merci !</div>
-    			<div class="erreur" v-if="erreur">Merci de vérifier les données du formulaire. Tous les champs sont requis à l'exception des remarques.</div>
-    			<hr>
     			<p>Par manque de place, nous ne serons malheureusement pas en mesure d'accueillir vos enfants. Ce sera l'occasion pour tout le monde de profiter d'une belle journée entre adultes !</p>
     			<h2>Nous retrouver</h2>
         		<div class="photo">
@@ -47,6 +45,16 @@
     			<h2>Nous faire un cadeau</h2>
     			<p>Non pas que nous vous en demandions un ! Mais si l'envie vous en prenait... et que vous souhaitiez contribuer à votre façon à nous façonner un petit nid douillet, la voici :
     			<p><a class="action" href="https://www.ookoodoo.com/list/795398">Notre liste de mariage</a></p>
+    			<p>Ou si vous le préférez, voici les coordonnées de notre nouveau compte commun :</p>
+    			<p class="action">IBAN CH36 8021 0000 0081 9268 2<br>
+    			Banque Raiffeisen Genève Ouest<br>
+    			1242 Satigny</p>
+    			<hr>
+    			<div class="footer flex-container small">
+    				<span>Alexandra Paccot & Florian Sinatra</span>
+    				<span>3, chemin de Champ-Claude</span>
+    				<span>1214 Vernier</span>
+    			</div>
         	</div>
         </div>
 

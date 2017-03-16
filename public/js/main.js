@@ -1,5 +1,5 @@
 var app = new Vue({
-  el: '#root',
+  el: '#formulaire',
 
   data: {
     conjoint: false,
