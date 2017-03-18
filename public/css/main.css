@@ -2,28 +2,66 @@
 @import url('fonts/nuptial-script.css');
 
 body {
-    font: 16px/26px 'Museo-300';
-    background: url('../img/bg.png');
-    height:100%;
-    color: #65513c;
+    font:           16px/26px 'Museo-300';
+    background:     url('../img/bg.png');
+    height:         100%;
+    color:          #65513c;
 }
 
 .main {
-    height: 100%;
-    padding: 0 10px;
+    height:         100%;
+    padding:        0 2ex;
 }
 
 .container {
-    background-color: #F8F2E8;
-    background-image: url('../img/oiseaux.png');
-    background-position: 100% 1em;
-    background-repeat: no-repeat;
-    background-size: 40%;
-    max-width: 40em;
-    margin: 0em auto;
-    padding: 1px 1em 4em;
-    box-shadow: 0 0 10px 2px rgba(0,0,0,0.5);
-    text-align: center;
+    background-color:       #F8F2E8;
+    background-image:       url('../img/oiseaux.png');
+    background-position:    100% 1em;
+    background-repeat:      no-repeat;
+    background-size:        40%;
+    max-width:              40em;
+    margin:                 0em auto;
+    padding:                1px 1em 4em;
+    box-shadow:             0 0 10px 2px rgba(0,0,0,0.5);
+    text-align:             center;
+}
+
+.lang {
+    position:       absolute;
+    left:           3ex;
+    top:            1ex;
+    line-height:    0;
+}
+
+.lang > a {
+    display:        inline-block;
+    box-shadow:     0 0 5px 2px rgba(0,0,0,0.5);
+    margin-right:   1ex;
+}
+
+.lang > a > img {
+    width:          1.5em;
+}
+
+@media only screen and (min-width: 42em) {
+    .lang {
+        left:       calc(50vw - 19.5em);
+    }
+
+    .lang > a > img {
+        width:      2em;
+    }
+}
+
+@media only screen and (min-width: 54em) {
+    .lang {
+        left:       1em;
+        top:        1em;
+    }
+
+    .lang > a {
+        margin-right:      1em;
+    }
 }
 
 h1.titre {

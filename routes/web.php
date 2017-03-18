@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function() {
-    return 'win';
+Route::get('/', function(Illuminate\Http\Request $request) {
+    if( $request->hasCookie('locale') ) {
+    	App::setLocale( $request->cookie('locale') );
+    }
+	
+    return view('accueil');
+});
+
+Route::get('{locale}', function($locale) {
+	App::setLocale($locale);
+    return response()
+    	->view('accueil')
+    	->cookie('locale', $locale, 100000);
 });
