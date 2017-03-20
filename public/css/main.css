@@ -89,6 +89,16 @@ h2 {
     text-shadow: 1px 1px lightgray;
 }
 
+p > .emphase {
+    font-size: 1.3em;
+    display: block;
+    line-height: 2.4em;
+}
+
+q, .q {
+    quotes: "\00ab\00a0" "\00a0\00bb";
+}
+
 .action {
     background: #65513c;
     padding: 1em;

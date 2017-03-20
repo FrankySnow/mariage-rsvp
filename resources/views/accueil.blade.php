@@ -19,6 +19,8 @@
                     --><a href="/it" title="In italiano"><img src="img/it.png"></a>
                 </div>
         		<h1 class="titre"><img src="img/titre.png"></h1>
+                <p>@lang('accueil.1')</p>
+                <p>@lang('accueil.2')</p>
         		<!-- <div class="photo">
         			<img src="img/DSC_0349.JPG">
     			</div> -->
@@ -47,7 +49,7 @@
         			<img src="img/plan.png">
     			</div>
     			<h2>@lang("Nous faire un cadeau")</h2>
-    			<p>@lang("Non pas que nous vous en demandions un ! Mais si l'envie vous en prenait... et que vous souhaitiez contribuer à votre façon à nous façonner un petit nid douillet, la voici :")</p>
+    			<p>@lang("Non pas que nous vous en demandions un ! Mais si l'envie vous en prenait... et que vous souhaitiez contribuer à votre façon à nous aider à aménager notre petit nid douillet, la voici :")</p>
     			<p><a class="action" href="https://www.ookoodoo.com/list/795398">@lang("Notre liste de mariage")</a></p>
     			<p>@lang("Ou si vous le préférez, voici les coordonnées de notre nouveau compte commun :")</p>
     			<p class="action">IBAN CH36 8021 0000 0081 9268 2<br>
