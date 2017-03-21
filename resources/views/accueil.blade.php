@@ -27,10 +27,12 @@
     			<h2>@lang('Nous répondre')</h2>
     			<p>@lang('Nous aimerions beaucoup vous compter parmi nous ! Merci de nous répondre avant le 20 avril en utilisant le formulaire ci-dessous.')</p>
     			<form id="formulaire" class="formulaire txtleft" action="" v-on:submit.prevent="onSubmit">
-    				<input type="text"  class="one-quarter" name="prenom" placeholder="@lang('Prénom')" v-model="prenom">
-    				<input type="text"  class="one-quarter" name="nom" placeholder="@lang('Nom')" v-model="nom">
-    				<input type="text"  class="one-quarter" name="email" placeholder="@lang('Courriel')" v-model="email">
-    				<input type="text"  class="three-quarters" name="remarque" v-model="remarque" placeholder="@lang('Remarques (allergique, végétarien, etc.)')">
+                    <div class="grid-3 has-gutter">
+                        <input type="text"  class="one-quarter" name="prenom" placeholder="@lang('Prénom')" v-model="prenom">
+                        <input type="text"  class="one-quarter" name="nom" placeholder="@lang('Nom')" v-model="nom">
+                        <input type="text"  class="one-half" name="email" placeholder="@lang('Courriel')" v-model="email">
+                        <input type="text"  class="full" name="remarque" v-model="remarque" placeholder="@lang('Remarques (allergique, végétarien, etc.)')">
+                    </div>
     				<label class=""><input type="radio" name="presence_id" v-model="presence" value="1">@lang("Je serai là jusqu'au bout de la nuit !")</label>
     				<label class=""><input type="radio" name="presence_id" v-model="presence" value="2">@lang("Malheureusement, je ne pourrai venir qu'au cocktail")</label>
     				<label class=""><input type="radio" name="presence_id" v-model="presence" value="3">@lang("Désolé, mais je ne pourrai pas venir du tout")</label>
@@ -49,10 +51,10 @@
         			<img src="img/plan.png">
     			</div>
     			<h2>@lang("Nous faire un cadeau")</h2>
-    			<p>@lang("Non pas que nous vous en demandions un ! Mais si l'envie vous en prenait... et que vous souhaitiez contribuer à votre façon à nous aider à aménager notre petit nid douillet, la voici :")</p>
+    			<p>@lang("Non pas que nous vous en demandions un ! Mais si l'envie vous en prenait... et que vous souhaitiez contribuer à nous aider à aménager notre petit nid douillet, la voici :")</p>
     			<p><a class="action" href="https://www.ookoodoo.com/list/795398">@lang("Notre liste de mariage")</a></p>
     			<p>@lang("Ou si vous le préférez, voici les coordonnées de notre nouveau compte commun :")</p>
-    			<p class="action">IBAN CH36 8021 0000 0081 9268 2<br>
+    			<p class="action encadre">IBAN CH36 8021 0000 0081 9268 2<br>
     			Banque Raiffeisen Genève Ouest<br>
     			1242 Satigny - @lang("Suisse")</p>
     			<hr>

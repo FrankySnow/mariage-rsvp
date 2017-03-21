@@ -90,7 +90,7 @@ h2 {
 }
 
 p > .emphase {
-    font-size: 1.3em;
+    font-size: 1.2em;
     display: block;
     line-height: 2.4em;
 }
@@ -99,14 +99,19 @@ q, .q {
     quotes: "\00ab\00a0" "\00a0\00bb";
 }
 
+p, label {
+    line-height: inherit;
+}
+
 .action {
-    background: #65513c;
-    padding: 1em;
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    font-family: 'Museo-500';
-    border: none;
+    background:         #65513c;
+    padding:            1em;
+    display:            inline-block;
+    text-decoration:    none;
+    color:              white;
+    font-family:        'Museo-500';
+    border:             none;
+    margin:             1em;
 }
 
 .footer {
@@ -130,7 +135,25 @@ q, .q {
     margin-right: 1ex;
 }
 
-.bouton-envoyer {
+.formulaire input[type=text] {
+    border: 0;
+    margin-bottom: 1rem;
+    padding: 1em;
+}
+
+.formulaire input[type=text]:hover,
+.formulaire input[type=text]:focus,
+a.action:hover,
+button.action:hover {
+    box-shadow: 0 0 10px 1px rgba(0,0,0,0.5);
+}
+
+a:focus, a:hover, a:active {
+    color: white;
+}
+
+.encadre {
+    background-color: #b79571;
 }
 
 .erreur, .succes {
