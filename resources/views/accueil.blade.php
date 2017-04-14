@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Alex & Flo ♥ 24.06.2017</title>
+        <meta name="robots" content="noindex, nofollow, noarchive">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
