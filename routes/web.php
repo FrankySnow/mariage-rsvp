@@ -24,4 +24,4 @@ Route::get('{locale}', function($locale) {
     return response()
     	->view('accueil')
     	->cookie('locale', $locale, 100000);
-});
+})->where('locale','(fr|it)');
