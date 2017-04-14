@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Reponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Notifications\NouvelleReponse;
+use Illuminate\Support\Facades\Notification;
 
 class ReponsesController extends Controller
 {
@@ -40,6 +43,8 @@ class ReponsesController extends Controller
      */
     public function store(Request $request)
     {
+        $reponse = [];
+
         $this->validate($request, [
             'prenom' => 'required',
             'nom' => 'required',
@@ -58,10 +63,14 @@ class ReponsesController extends Controller
                 'presence_id' => $request->presence_id,
             ];
 
-            Reponse::create( $conjoint );
+            $reponse['conjoint'] = Reponse::create( $conjoint );
         }
         
-        Reponse::create( $request->except(['conjoint', 'prenom_conjoint','nom_conjoint']) );
+        $reponse['principal'] = Reponse::create( $request->except(['conjoint', 'prenom_conjoint','nom_conjoint']) );
+
+        if( User::count() ) {
+            Notification::send( User::all(), new NouvelleReponse($reponse) );
+        }
 
         return response()->json(['message' => 'Réponse enregistrée !'], 200);
     }
