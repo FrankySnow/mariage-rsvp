@@ -19,6 +19,10 @@ Route::get('/', function(Illuminate\Http\Request $request) {
     return view('accueil');
 });
 
+Route::get('reponses', function() {
+    return view('reponses');
+});
+
 Route::get('{locale}', function($locale) {
 	App::setLocale($locale);
     return response()

@@ -18,7 +18,12 @@ class ReponsesController extends Controller
      */
     public function index()
     {
-        $reponses = Reponse::all()->toArray();
+        $reponses = Reponse::all()
+            ->groupBy(function($item,$key)
+            {
+                return $item->created_at->format('U'); // temps Unix
+            })
+            ->toArray();
 
         return response()->json([
             'data' => $reponses
